@@ -2,8 +2,8 @@
 require '../vendor/autoload.php';
 include '../Configs.php';
 
-use Parse\ParseUser;
 use Parse\ParseException;
+use Parse\ParseUser;
 
 $currUser = ParseUser::getCurrentUser();
 if ($currUser) {
@@ -17,12 +17,10 @@ if ($currUser) {
     } catch (Exception $e) {
     }
 
-
 }
 
-
 // LOGIN ------------------------------------------
-if(isset($_POST['username']) && isset($_POST['password'])) {
+if (isset($_POST['username']) && isset($_POST['password'])) {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -31,14 +29,14 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
         $user = ParseUser::logIn($username, $password);
 
         $currUser = ParseUser::getCurrentUser();
-        if ($currUser->get("role") === 'admin'){
-            { header('Refresh:0; url=../dashboard/panel.php'); }
+        if ($currUser->get("role") === 'admin') {
+            {header('Refresh:0; url=../dashboard/panel.php');}
 
         } else {
 
             showSweetAlert("Error!", "You are not authorized", "error");
 
-            { header('Refresh:0; url=../auth/logout.php'); }
+            {header('Refresh:0; url=../auth/logout.php');}
         }
 
         showSweetAlert("Success!", "Logged In, Wait...", "success");
@@ -58,8 +56,8 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
 <!-- header -->
 
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Heyto Live Dashboard - Login</title>
-    
+    <title>Trystme Dashboard - Login</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="../assets/dashboard/images/favicon.png"/>
@@ -94,7 +92,7 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
             </div>
 
             <form method="post" class="login100-form validate-form">
-					<span class="login100-form-title">Heyto Live Admin Panel Please Login</span>
+					<span class="login100-form-title">Trystme Admin Panel Please Login</span>
 
                 <div class="wrap-input100 validate-input" data-validate = "Email empty">
                     <input class="input100" type="text" name="username" placeholder="Email">
@@ -134,7 +132,7 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
 function showSweetAlert($title, $explain, $type)
 {
     echo '<script type="text/javascript">
-    setTimeout(function () { swal("'.$title.'","'.$explain.'","'.$type.'");
+    setTimeout(function () { swal("' . $title . '","' . $explain . '","' . $type . '");
     }, 1000);</script>';
 }
 ?>

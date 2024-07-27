@@ -30,24 +30,24 @@ echo '
 
 <head>
 
-    <link href="../assets/dashboard/css/lib/toastr/toastr.min.css" rel="stylesheet">
-    <!-- Bootstrap Core CSS -->
-    <link href="../assets/dashboard/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
+  <link href="../assets/dashboard/css/lib/toastr/toastr.min.css" rel="stylesheet">
+  <!-- Bootstrap Core CSS -->
+  <link href="../assets/dashboard/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
 
-    <link href="../assets/dashboard/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
-    <link href="../assets/dashboard/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
-    <link href="../assets/dashboard/css/lib/owl.carousel.min.css" rel="stylesheet" />
-    <link href="../assets/dashboard/css/lib/owl.theme.default.min.css" rel="stylesheet" />
-    <link href="../assets/dashboard/css/helper.css" rel="stylesheet">
-    <link href="../assets/dashboard/css/style.css" rel="stylesheet">
-    <link href="../assets/dashboard/css/aliki.css" rel="stylesheet">
-    <link href="../assets/dashboard/css/sweetalert2.css" rel="stylesheet">
-    <link href="../assets/dashboard/css/sweetalert.css" rel="stylesheet">
+  <link href="../assets/dashboard/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
+  <link href="../assets/dashboard/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
+  <link href="../assets/dashboard/css/lib/owl.carousel.min.css" rel="stylesheet" />
+  <link href="../assets/dashboard/css/lib/owl.theme.default.min.css" rel="stylesheet" />
+  <link href="../assets/dashboard/css/helper.css" rel="stylesheet">
+  <link href="../assets/dashboard/css/style.css" rel="stylesheet">
+  <link href="../assets/dashboard/css/aliki.css" rel="stylesheet">
+  <link href="../assets/dashboard/css/sweetalert2.css" rel="stylesheet">
+  <link href="../assets/dashboard/css/sweetalert.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
-    <!--[if lt IE 9]>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:** -->
+  <!--[if lt IE 9]>
     <script src="https:**oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https:**oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -102,10 +102,12 @@ echo '
 <!--Datatables scriptes-->
 
 <script src="../assets/dashboard/js/lib/datatables/datatables.min.js"></script>
-<script src="../assets/dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+<script src="../assets/dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js">
+</script>
 <script src="../assets/dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
 <script src="../assets/dashboard/js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-<script src="../assets/dashboard/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+<script src="../assets/dashboard/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js">
+</script>
 <script src="../assets/dashboard/js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
 <script src="../assets/dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
 <script src="../assets/dashboard/js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
@@ -127,103 +129,104 @@ echo '
 
 <!-- javascript functions -->
 <script>
-    // LOGOUT -----------------------------------
-    function logOut() {
-        // Show Loading modal
-        document.getElementById("loadingText").innerHTML = "Loging out...";
-        $('#loadingModal').modal('show');
+// LOGOUT -----------------------------------
+function logOut() {
+  // Show Loading modal
+  document.getElementById("loadingText").innerHTML = "Loging out...";
+  $('#loadingModal').modal('show');
 
-        $.ajax({
-            url:"../auth/logout.php",
+  $.ajax({
+    url: "../auth/logout.php",
 
-            success:function(data) {
-                var results = data;
-                console.debug(results);
+    success: function(data) {
+      var results = data;
+      console.debug(results);
 
-                window.location.href = "../index.php";
+      window.location.href = "../index.php";
 
-                // error
-            }, error: function () {
-                alert('Error!. Try again!');
-            }
-        });
+      // error
+    },
+    error: function() {
+      alert('Error!. Try again!');
     }
+  });
+}
 
-    function logIn() {
-        // Show Loading modal
-        document.getElementById("loadingText").innerHTML = "Loging...";
-        $('#loadingModal').modal('show');
+function logIn() {
+  // Show Loading modal
+  document.getElementById("loadingText").innerHTML = "Loging...";
+  $('#loadingModal').modal('show');
 
-        $.ajax({
-            url:"../auth/logout.php",
+  $.ajax({
+    url: "../auth/logout.php",
 
-            success:function(data) {
-                var results = data;
-                console.debug(results);
+    success: function(data) {
+      var results = data;
+      console.debug(results);
 
-                window.location.href = "../index.php";
+      window.location.href = "../index.php";
 
-                // error
-            }, error: function () {
-                alert('Error!. Try again!');
-            }
-        });
+      // error
+    },
+    error: function() {
+      alert('Error!. Try again!');
     }
+  });
+}
 
-    // SHOW LOADING MODAL
-    function showLoadingModal() {
-        // Show loading modal
-        document.getElementById("loadingText").innerHTML = "Please, wait...";
-        $('#loadingModal').modal('show');
-    }
-
-
-    // SHOW LOADING MODAL (FOR EDIT PROFILE)
-    function showLoadingForEditProfile() {
-        // Show loading modal
-        document.getElementById("loadingText").innerHTML = "Updating ...";
-        $('#loadingModal').modal('show');
+// SHOW LOADING MODAL
+function showLoadingModal() {
+  // Show loading modal
+  document.getElementById("loadingText").innerHTML = "Please, wait...";
+  $('#loadingModal').modal('show');
+}
 
 
-        setTimeout(function(){
-            location.reload();
-        }, 1000);
-    }
-
-    // SHOW LOADING MODAL (Add new School)
-    function showLoadingForAddNewSchool() {
-        // Show loading modal
-        document.getElementById("loadingText").innerHTML = "Adding value ...";
-        $('#loadingModal').modal('show');
+// SHOW LOADING MODAL (FOR EDIT PROFILE)
+function showLoadingForEditProfile() {
+  // Show loading modal
+  document.getElementById("loadingText").innerHTML = "Updating ...";
+  $('#loadingModal').modal('show');
 
 
-        setTimeout(function(){
-            location.reload();
-        }, 3000);
-    }
+  setTimeout(function() {
+    location.reload();
+  }, 1000);
+}
 
-    function showToastTest() {
-        toastr.success('This Is Success Message','Bottom Left',{
-            "positionClass": "toast-bottom-left",
-            timeOut: 5000,
-            "closeButton": true,
-            "debug": false,
-            "newestOnTop": true,
-            "progressBar": true,
-            "preventDuplicates": true,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut",
-            "tapToDismiss": false
+// SHOW LOADING MODAL (Add new School)
+function showLoadingForAddNewSchool() {
+  // Show loading modal
+  document.getElementById("loadingText").innerHTML = "Adding value ...";
+  $('#loadingModal').modal('show');
 
-        })
-    }
 
+  setTimeout(function() {
+    location.reload();
+  }, 3000);
+}
+
+function showToastTest() {
+  toastr.success('This Is Success Message', 'Bottom Left', {
+    "positionClass": "toast-bottom-left",
+    timeOut: 5000,
+    "closeButton": true,
+    "debug": false,
+    "newestOnTop": true,
+    "progressBar": true,
+    "preventDuplicates": true,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut",
+    "tapToDismiss": false
+
+  })
+}
 </script>
 
 <?php
@@ -233,17 +236,10 @@ $version = ParseServerInfo::getVersion();
 echo '
 
 <div class="footerFixed">
-    <p> © 2022 All rights reserved. Developed with <i class="fa fa-heart"></i> by <a href="https://www.angopapo.com" target="_blank">Angopapo, Lda</a></p>
+    <p> © 2024 All rights reserved. Developed with <i class="fa fa-heart"></i> by <a href="https://www.mindberzerk.com" target="_blank">mindbezerk, Lda</a></p>
     <p> Parse Server v.'.$version.' / Admin Panel v.1.1</p>
 </div>
  
  ';
 
 ?>
-
-
-
-
-
-
-

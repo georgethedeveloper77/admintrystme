@@ -2,19 +2,7 @@
 require '../vendor/autoload.php';
 include '../Configs.php';
 
-use Parse\ParseObject;
-use Parse\ParseQuery;
-use Parse\ParseACL;
-use Parse\ParsePush;
 use Parse\ParseUser;
-use Parse\ParseInstallation;
-use Parse\ParseException;
-use Parse\ParseAnalytics;
-use Parse\ParseFile;
-use Parse\ParseCloud;
-use Parse\ParseClient;
-use Parse\ParseSessionStorage;
-use Parse\ParseGeoPoint;
 //session_start();
 
 $currUser = ParseUser::getCurrentUser();
@@ -22,12 +10,11 @@ if (!$currUser) {
 
     header("Refresh:0; url=../index.php");
 
-} elseif ($currUser->get("role") !== "admin"){
+} elseif ($currUser->get("role") !== "admin") {
     // check if the current user is an admin
     header("Refresh:0; url=../auth/logout.php");
 
 }
-
 
 ?>
 
@@ -40,7 +27,7 @@ if (!$currUser) {
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/dashboard/images/favicon.png">
-    <title>Heyto Live | Reports</title>
+    <title>Trystme | Reports</title>
     <!-- Bootstrap Core CSS -->
     <link href="../assets/dashboard/css/lib/bootstrap/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
@@ -71,14 +58,14 @@ if (!$currUser) {
 
         <?php
 
-        include '../admin/header_admin.php';
-        include '../admin/left_sidebar_admin.php';
-        include '../security/side_report.php'; // Page wrapper
+include '../admin/header_admin.php';
+include '../admin/left_sidebar_admin.php';
+include '../security/side_report.php'; // Page wrapper
 
-        ?>
+?>
 
         <!-- footer -->
-        <?php include 'footer.php' ?>
+        <?php include 'footer.php'?>
         <!-- End footer -->
     </div>
     <!-- End Wrapper -->

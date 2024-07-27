@@ -2,11 +2,11 @@
 require '../vendor/autoload.php';
 include '../Configs.php';
 
-use Parse\ParseUser;
 use Parse\ParseException;
+use Parse\ParseUser;
 
 // FORGOT PASSWORD -----------------------------------
-if(isset($_GET['email'])) {
+if (isset($_GET['email'])) {
     $email = $_GET['email'];
 
     try {
@@ -25,7 +25,7 @@ if(isset($_GET['email'])) {
 <!-- header -->
 
 <head>
-    <title>Heyto Live Dashboard - Recover</title>
+    <title>Trystme Dashboard - Recover</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -111,7 +111,7 @@ if(isset($_GET['email'])) {
 function showSweetAlert($title, $explain, $type)
 {
     echo '<script type="text/javascript">
-    setTimeout(function () { swal("'.$title.'","'.$explain.'","'.$type.'");
+    setTimeout(function () { swal("' . $title . '","' . $explain . '","' . $type . '");
     }, 1000);</script>';
 }
 ?>
